@@ -5,47 +5,35 @@
 
     <h2>Liczba planowanych gości</h2>
 
+     <tbody>
+        <%--<form id="form2" runat="server">--%>
+            <div>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
+                    <Columns>
+                        <%--<asp:BoundField DataField="Place" HeaderText="Miejsce" SortExpression="Place" ItemStyle-Width="250px" />--%>
+                        <%--<asp:BoundField DataField="Date" HeaderText="Data" SortExpression="Date" DataFormatString = "{0:dd/MM/yyyy}" ItemStyle-Width="100px" />--%>
+                        <asp:BoundField DataField="Adults" HeaderText="Liczba dorosłych" SortExpression="Adults" ItemStyle-Width="170px" />
+                        <asp:BoundField DataField="Teens" HeaderText="Młodzieży do 18 lat" SortExpression="Teens" ItemStyle-Width="250px" />
+                        <asp:BoundField DataField="Kids" HeaderText="Dzieci do 7 lat" SortExpression="Kids" ItemStyle-Width="150px" />
+
+                    </Columns>
 
 
-    <table class="table">
-        <thead class="thead-default">
+                </asp:GridView>
 
-            <tr>
-                <th></th>
-                <th>Miejsce</th>
-                <th>Data</th>
-                <th>Liczba dorosłych</th>
-                <th>Młodzieży do 18 lat</th>
-                <th>Dzieci do 7 lat</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>ul. Piotrkowska 56</td>
-                <td>23.06.2017</td>
-                <td>204</td>
-                <td>25</td>
-                <td>22</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>ul. Politechniki 52</td>
-                <td>11.08.2017</td>
-                <td>83</td>
-                <td>25</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>ul. Żwirki i Wigury 56</td>
-                <td>03.05.2017</td>
-                <td>151</td>
-                <td>69</td>
-                <td>37</td>
-            </tr>
-        </tbody>
-    </table>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server"
+                    ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+                    SelectCommand="SELECT [Adults], [Teens], [Kids] FROM [Guest]"></asp:SqlDataSource>
+                ﻿
+
+            </div>
+
+        <%--</form>--%>
+
+
+    </tbody>
+
+   
 
 
     <p align="right">
