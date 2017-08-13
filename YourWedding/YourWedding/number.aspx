@@ -11,10 +11,12 @@
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="GuestId">
                 <Columns>
                     <asp:BoundField DataField="FamilyId" HeaderText="Nr rodziny" SortExpression="FamilyId" ItemStyle-Width="100px" />
-                    <asp:BoundField DataField="Name" HeaderText="Imię i nazwisko" SortExpression="Name" ItemStyle-Width="250px" />
-                    <asp:BoundField DataField="Mail" HeaderText="E-mail" SortExpression="Mail" ItemStyle-Width="150px" />
-                    <asp:BoundField DataField="Age" HeaderText="przedział wiekowy" SortExpression="Age" ItemStyle-Width="150px" />
-                
+                    <asp:BoundField DataField="Name1" HeaderText="Imię i nazwisko" SortExpression="Name1" ItemStyle-Width="200px" />
+                    <asp:BoundField DataField="Name2" HeaderText="Imię i nazwisko" SortExpression="Name2" ItemStyle-Width="200px" />
+                    <asp:BoundField DataField="Mail" HeaderText="E-mail" SortExpression="Mail" ItemStyle-Width="200px" />
+                    <asp:BoundField DataField="NumberOfKids" HeaderText="Liczba dzieci" SortExpression="NumberOfKids" ItemStyle-Width="150px" />
+                    <asp:BoundField DataField="NumberOfTeens" HeaderText="Liczba młodzieży" SortExpression="NumberOfTeens" ItemStyle-Width="150px" />
+
                 </Columns>
 
 
@@ -22,14 +24,12 @@
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                 ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-                SelectCommand="SELECT [FamilyId], [Name], [Mail], [Age], [GuestId] FROM [Guest]">
-
-            </asp:SqlDataSource>
+                SelectCommand="SELECT [FamilyId], [Name1], [Name2], [Mail], [NumberOfKids], [NumberOfTeens], [GuestId] FROM [Guest]"></asp:SqlDataSource>
             ﻿
 
         </div>
 
-       
+
     </tbody>
 
 
