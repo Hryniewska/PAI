@@ -5,18 +5,18 @@
     <br>
     <h2>Terminy wesel</h2>
 
-    <thead class="thead-default" runat="server">
+<%--    <thead class="thead-default" runat="server">
         <title></title>
-    </thead>
+    </thead>--%>
     <tbody>
         <%--<form id="form2" runat="server">--%>
             <div>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
                     <Columns>
-                        <asp:BoundField DataField="Bride" HeaderText="Bride" SortExpression="Bride" />
-                        <asp:BoundField DataField="Groom" HeaderText="Groom" SortExpression="Groom" />
-                        <asp:BoundField DataField="Place" HeaderText="Place" SortExpression="Place" />
-                        <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+                        <asp:BoundField DataField="Bride" HeaderText="Panna młoda" SortExpression="Bride" ItemStyle-Width="170px" />
+                        <asp:BoundField DataField="Groom" HeaderText="Pan młody" SortExpression="Groom" ItemStyle-Width="170px" />
+                        <asp:BoundField DataField="Place" HeaderText="Miejsce" SortExpression="Place" ItemStyle-Width="250px" />
+                        <asp:BoundField DataField="Date" HeaderText="Data" SortExpression="Date" DataFormatString = "{0:dd/MM/yyyy}" ItemStyle-Width="100px" />
                     </Columns>
 
 

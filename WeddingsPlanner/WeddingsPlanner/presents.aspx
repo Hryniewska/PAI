@@ -10,37 +10,35 @@
     </div>
     <br />
 
-    <table class="table">
-        <thead class="thead-default">
-            <tr>
-                <th>ID artykułu</th>
-                <th>Nazwa artykułu</th>
-                <th>Kod kreskowy</th>
-                <th>Nazwa sklepu</th>
-                <th>Adres sklepu</th>
-                <th>Liczba sztuk</th>
+     <tbody>
+        <%--<form id="form2" runat="server">--%>
+            <div>
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
+                    <Columns>
+                        <asp:BoundField DataField="ArticleId" HeaderText="Nr" SortExpression="ArticleId" ItemStyle-Width="50px" />
+                        <asp:BoundField DataField="ArticleName" HeaderText="Nazwa artykułu" SortExpression="ArticleName" ItemStyle-Width="300px" />
+                        <asp:BoundField DataField="BarCode" HeaderText="Kod kreskowy" SortExpression="BarCode" ItemStyle-Width="120px" />
+                        <asp:BoundField DataField="ArticlesNumber" HeaderText="L. szt." SortExpression="ArticlesNumber" ItemStyle-Width="60px" />
+                        <asp:BoundField DataField="ShopName" HeaderText="Nazwa sklepu" SortExpression="ShopName" ItemStyle-Width="170px" />
+                        <asp:BoundField DataField="ShopAdress" HeaderText="Adres sklepu" SortExpression="ShopAdress" ItemStyle-Width="250px" />
+                        <asp:BoundField DataField="Website" HeaderText="Strona internetowa" SortExpression="Website" ItemStyle-Width="150px" />
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Odkurzacz bezworkowy - VAX C86-E2-BE</td>
-                <td>5 901234 123457</td>
-                <td>RTV EURO AGD</td>
-                <td>Aleja Jana Pawła II 30, 93-570 Łódź</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>SIEMENS EQ6 TE607203RW</td>
-                <td>5 902614 190257</td>
-                <td>Media Markt</td>
-                <td>Piłsudskiego 15/23, 90-307 Łódź</td>
-                <td>1</td>
-            </tr>
-        </tbody>
-    </table>
+                    </Columns>
+
+
+                </asp:GridView>
+
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server"
+                    ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+                    SelectCommand="SELECT [ArticleId], [ArticleName], [BarCode], [ArticlesNumber], [ShopName], [ShopAdress], [Website] FROM [Article]"></asp:SqlDataSource>
+                ﻿
+
+            </div>
+
+        <%--</form>--%>
+
+
+    </tbody>
 
     <p align="right">
         <a class="btn btn-default" runat="server" href="~/">Powrót &raquo;</a>
