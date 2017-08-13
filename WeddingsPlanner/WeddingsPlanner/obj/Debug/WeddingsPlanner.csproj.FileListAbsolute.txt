@@ -156,3 +156,7 @@ D:\Pulpit\PAI\WeddingsPlanner\WeddingsPlanner\bin\Microsoft.Owin.Security.OAuth.
 D:\Pulpit\PAI\WeddingsPlanner\WeddingsPlanner\obj\Debug\WeddingsPlanner.csprojResolveAssemblyReference.cache
 D:\Pulpit\PAI\WeddingsPlanner\WeddingsPlanner\obj\Debug\WeddingsPlanner.dll
 D:\Pulpit\PAI\WeddingsPlanner\WeddingsPlanner\obj\Debug\WeddingsPlanner.pdb
+D:\Pulpit\PAI\WeddingsPlanner\WeddingsPlanner\bin\Microsoft.ApplicationInsights.TraceListener.dll
+D:\Pulpit\PAI\WeddingsPlanner\WeddingsPlanner\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Pulpit\PAI\WeddingsPlanner\WeddingsPlanner\bin\Microsoft.ApplicationInsights.TraceListener.xml
+D:\Pulpit\PAI\WeddingsPlanner\WeddingsPlanner\bin\System.Diagnostics.DiagnosticSource.xml

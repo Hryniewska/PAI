@@ -4,42 +4,38 @@
 
     <br>
     <h2>Terminy wesel</h2>
-    <table class="table">
-        <thead class="thead-default">
-            <tr>
-                <th></th>
-                <th>Panna młoda</th>
-                <th>Pan młody</th>
-                <th>Miejsce</th>
-                <th>Data</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Anna Nowak</td>
-                <td>Adam Kowalski</td>
-                <td>ul. Piotrkowska 56, 90-105 Łódź</td>
-                <td>23.06.2017</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Krystyna Kowalczyk</td>
-                <td>Jan Zięba</td>
-                <td>al. Politechniki 12, 93-590 Łódź</td>
-                <td>11.08.2017</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Justyna Styk</td>
-                <td>Marcin Kasperczyk</td>
-                <td>ul. Żwirki i Wigury 5, 90-450 Łódź</td>
-                <td>03.05.2017</td>
-            </tr>
-        </tbody>
-    </table>
 
-      <p align="right">
+    <thead class="thead-default" runat="server">
+        <title></title>
+    </thead>
+    <tbody>
+        <%--<form id="form2" runat="server">--%>
+            <div>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                    <Columns>
+                        <asp:BoundField DataField="Bride" HeaderText="Bride" SortExpression="Bride" />
+                        <asp:BoundField DataField="Groom" HeaderText="Groom" SortExpression="Groom" />
+                        <asp:BoundField DataField="Place" HeaderText="Place" SortExpression="Place" />
+                        <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+                    </Columns>
+
+
+                </asp:GridView>
+
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+                    ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+                    SelectCommand="SELECT [Bride], [Groom], [Place], [Date] FROM [Wedding]"></asp:SqlDataSource>
+                ﻿
+
+            </div>
+
+        <%--</form>--%>
+
+
+    </tbody>
+
+
+    <p align="right">
         <a class="btn btn-default" runat="server" href="~/">Powrót &raquo;</a>
     </p>
 
