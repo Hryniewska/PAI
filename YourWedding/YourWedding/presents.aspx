@@ -10,13 +10,13 @@
         <div>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
                 <Columns>
-                    <asp:BoundField DataField="ArticleName" HeaderText="ArticleName" SortExpression="ArticleName" ItemStyle-Width="100px" />
-                    <asp:BoundField DataField="BarCode" HeaderText="BarCode" SortExpression="BarCode" ItemStyle-Width="250px" />
-                    <asp:BoundField DataField="ShopName" HeaderText="ShopName" SortExpression="ShopName" ItemStyle-Width="150px" />
-                    <asp:BoundField DataField="ShopAdress" HeaderText="ShopAdress" SortExpression="ShopAdress" ItemStyle-Width="150px" />
-                
-                    <asp:BoundField DataField="Website" HeaderText="Website" SortExpression="Website" />
-                
+                    <asp:BoundField DataField="ArticleName" HeaderText="Nazwa artykułu" SortExpression="ArticleName" ItemStyle-Width="300px" />
+                    <asp:BoundField DataField="BarCode" HeaderText="Kod kreskowy" SortExpression="BarCode" ItemStyle-Width="150px" />
+                    <asp:BoundField DataField="ShopName" HeaderText="Nazwa sklepu" SortExpression="ShopName" ItemStyle-Width="150px" />
+                    <asp:BoundField DataField="ShopAdress" HeaderText="Adres sklepu" SortExpression="ShopAdress" ItemStyle-Width="250px" />
+                    <asp:BoundField DataField="Website" HeaderText="Str. internetowa" SortExpression="Website" ItemStyle-Width="150px" />
+                    <asp:BoundField DataField="Occupied" HeaderText="Zajęte" SortExpression="Occupied" ItemStyle-Width="55px" />
+
                 </Columns>
 
 
@@ -24,7 +24,7 @@
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                 ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-                SelectCommand="SELECT [ArticleName], [BarCode], [ShopName], [ShopAdress], [Website] FROM [Present]">
+                SelectCommand="SELECT [ArticleName], [BarCode], [ShopName], [ShopAdress], [Website], [Occupied] FROM [Present]">
 
             </asp:SqlDataSource>
             ﻿

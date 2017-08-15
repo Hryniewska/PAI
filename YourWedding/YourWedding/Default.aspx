@@ -7,7 +7,7 @@
         <p class="lead">
             pragną połączyć swe losy węzłem małżeńskiej przysięgi poprzez zawarcie Sakramentu Małżeństwa w kościele św. Wita w Łodzi dnia 22 września 2017 roku o godzinie 15.00
         </p>
-        <p><a href="" class="btn btn-primary btn-large">Więcej o nas &raquo;</a></p>
+        <p><a  class="btn btn-primary btn-large" runat="server" href="~/About">Więcej o nas &raquo;</a></p>
     </div>
 
     <div class="row">
