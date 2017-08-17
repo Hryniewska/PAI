@@ -109,15 +109,15 @@
 
                             <asp:TemplateField HeaderText="Liczba">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblArticlesNumber" Width="60px" runat="server" Text='<%# Eval("ArticlesNumber")%>'></asp:Label>
+                                    <asp:Label ID="lblArticlesNumber" Width="40px" runat="server" Text='<%# Eval("ArticlesNumber")%>'></asp:Label>
                                 </ItemTemplate>
 
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="txtArticlesNumber" runat="server" Text='<%# Eval("ArticlesNumber")%>'></asp:TextBox>
+                                    <asp:TextBox ID="txtArticlesNumber" Width="40px" runat="server" Text='<%# Eval("ArticlesNumber")%>'></asp:TextBox>
                                 </EditItemTemplate>
 
                                 <FooterTemplate>
-                                    <asp:TextBox ID="txtArticlesNumber" Width="60px" MaxLength="5" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtArticlesNumber" Width="50px" MaxLength="5" runat="server"></asp:TextBox>
                                 </FooterTemplate>
                             </asp:TemplateField>
 
@@ -159,21 +159,21 @@
 
 
 
-                            <asp:TemplateField  HeaderText="Zajęty">
+                            <asp:TemplateField HeaderText="Zajęty">
                                 <ItemTemplate>
                                     <asp:Label ID="lblOccupied" Width="40px" runat="server" Text='<%# Eval("Occupied")%>'></asp:Label>
                                 </ItemTemplate>
 
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="txtOccupied" runat="server" Text='<%# Eval("Occupied")%>'></asp:TextBox>
+                                    <asp:TextBox ID="txtOccupied" Width="50px" runat="server" Text='<%# Eval("Occupied")%>'></asp:TextBox>
                                 </EditItemTemplate>
 
                                 <FooterTemplate>
-                                    <asp:TextBox ID="txtOccupied" Width="50px"  MaxLength="5" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtOccupied" Width="50px" MaxLength="5" runat="server"></asp:TextBox>
                                 </FooterTemplate>
                             </asp:TemplateField>
 
-                            
+
 
 
 

@@ -3,40 +3,132 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <br>
-    <h2>Terminy wesel</h2>
+    <thead>
+        <h2>Terminy wesel</h2>
 
-<%--    <thead class="thead-default" runat="server">
-        <title></title>
-    </thead>--%>
+        <br />
+        <script type="text/javascript" src="scripts/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery.blockUI.js"></script>
+    </thead>
+
+
+
+
     <tbody>
-        <%--<form id="form2" runat="server">--%>
-            <div>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
-                    <Columns>
-                        <asp:BoundField DataField="Bride" HeaderText="Panna młoda" SortExpression="Bride" ItemStyle-Width="170px" />
-                        <asp:BoundField DataField="Groom" HeaderText="Pan młody" SortExpression="Groom" ItemStyle-Width="170px" />
-                        <asp:BoundField DataField="Place" HeaderText="Miejsce" SortExpression="Place" ItemStyle-Width="250px" />
-                        <asp:BoundField DataField="Date" HeaderText="Data" SortExpression="Date" DataFormatString = "{0:dd/MM/yyyy}" ItemStyle-Width="100px" />
-                    </Columns>
+        <div id="dvGrid" style="padding: 10px">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:GridView ID="GridView1" runat="server"
+                        AutoGenerateColumns="false"
+                        HeaderStyle-BackColor="#eb6864" AllowPaging="true" ShowFooter="true"
+                        OnPageIndexChanging="OnPaging" OnRowEditing="EditCustomer"
+                        OnRowUpdating="UpdateCustomer" OnRowCancelingEdit="CancelEdit"
+                        PageSize="10">
+                        <Columns>
+
+                            <asp:TemplateField ItemStyle-Width="30px" HeaderText="Nr">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblWeddingId" runat="server" Text='<%# Eval("WeddingId")%>'></asp:Label>
+                                </ItemTemplate>
+
+                                <FooterTemplate>
+                                    <asp:TextBox ID="txtWeddingId" Width="40px" MaxLength="5" runat="server"></asp:TextBox>
+                                </FooterTemplate>
+                            </asp:TemplateField>
 
 
-                </asp:GridView>
+                            <asp:TemplateField HeaderText="Panna młoda">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblBride" Width="200px" runat="server" Text='<%# Eval("Bride")%>'></asp:Label>
+                                </ItemTemplate>
 
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server"
-                    ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-                    SelectCommand="SELECT [Bride], [Groom], [Place], [Date] FROM [Wedding]"></asp:SqlDataSource>
-                ﻿
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="txtBride" runat="server" Text='<%# Eval("Bride")%>'></asp:TextBox>
+                                </EditItemTemplate>
 
-            </div>
-
-        <%--</form>--%>
-
-
-    </tbody>
+                                <FooterTemplate>
+                                    <asp:TextBox ID="txtBride" Width="210px" runat="server"></asp:TextBox>
+                                </FooterTemplate>
+                            </asp:TemplateField>
 
 
-    <p align="right">
-        <a class="btn btn-default" runat="server" href="~/">Powrót &raquo;</a>
-    </p>
+                            <asp:TemplateField HeaderText="Pan młody">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblGroom" Width="200px" runat="server" Text='<%# Eval("Groom")%>'></asp:Label>
+                                </ItemTemplate>
+
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="txtGroom" runat="server" Text='<%# Eval("Groom")%>'></asp:TextBox>
+                                </EditItemTemplate>
+
+                                <FooterTemplate>
+                                    <asp:TextBox ID="txtGroom" runat="server"></asp:TextBox>
+                                </FooterTemplate>
+                            </asp:TemplateField>
+
+
+                            <asp:TemplateField HeaderText="Miejsce">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblPlace" Width="250px" runat="server" Text='<%# Eval("Place")%>'></asp:Label>
+                                </ItemTemplate>
+
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="txtPlace" runat="server" Text='<%# Eval("Place")%>'></asp:TextBox>
+                                </EditItemTemplate>
+
+                                <FooterTemplate>
+                                    <asp:TextBox ID="txtPlace" Width="250px" runat="server"></asp:TextBox>
+                                </FooterTemplate>
+                            </asp:TemplateField>
+
+
+
+                            <asp:TemplateField HeaderText="Data">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblDate" Width="100px" runat="server" Text='<%# Eval("Date")%>'></asp:Label>
+                                </ItemTemplate>
+
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="txtDate" runat="server" Text='<%# Eval("Date")%>'></asp:TextBox>
+                                </EditItemTemplate>
+
+                                <FooterTemplate>
+                                    <asp:TextBox ID="txtDate" Width="100px" runat="server"></asp:TextBox>
+                                </FooterTemplate>
+                            </asp:TemplateField>
+
+                            
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lnkRemove" runat="server" CommandArgument='<%# Eval("WeddingId")%>'
+                                        OnClientClick="return confirm('Do you want to delete?')"
+                                        Text="Usuń" OnClick="DeleteCustomer"></asp:LinkButton>
+                                </ItemTemplate>
+
+                                <FooterTemplate>
+                                    <asp:Button ID="btnAdd" runat="server" Text="Dodaj" OnClick="AddNewCustomer" />
+                                </FooterTemplate>
+                            </asp:TemplateField>
+
+
+                            <asp:CommandField ShowEditButton="True" />
+
+
+                        </Columns>
+                        <AlternatingRowStyle BackColor="#f9d1d0" />
+                    </asp:GridView>
+                </ContentTemplate>
+
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="GridView1" />
+                </Triggers>
+
+            </asp:UpdatePanel>
+        </div>
+
+
+        <p align="right">
+            <a class="btn btn-default" runat="server" href="~/">Powrót &raquo;</a>
+        </p>
 
 </asp:Content>

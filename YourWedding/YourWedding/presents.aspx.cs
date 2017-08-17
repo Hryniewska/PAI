@@ -19,8 +19,6 @@ namespace YourWedding
     public partial class presents : System.Web.UI.Page
     {
         private String strConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-        //private String strConnString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Pulpit\PAI\YourWedding\YourWedding\App_Data\YourWeddingDatabase.mdf;Integrated Security=True";
-        // SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Pulpit\PAI\YourWedding\YourWedding\App_Data\YourWeddingDatabase.mdf;Integrated Security=True");
 
         protected void Page_Load(object sender, EventArgs e)
         {
