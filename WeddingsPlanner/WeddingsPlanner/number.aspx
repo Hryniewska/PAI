@@ -39,7 +39,7 @@
     <div align="center" style="width: 65%;">
 
         <div style="float: left;">
-            <a class="btn btn-default" runat="server" href="/">Synchronizuj z bazą &raquo;</a>
+            <asp:Button class="btn btn-default" runat="server" OnClick="UpdateDatabase" Text="Synchronizuj z bazą" />
         </div>
         <div style="float: right;">
             <a class="btn btn-default" runat="server" href="~/">Powrót »</a>
