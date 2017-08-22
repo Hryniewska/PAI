@@ -9,6 +9,7 @@
         <br />
         <script type="text/javascript" src="scripts/jquery-1.3.2.min.js"></script>
         <script type="text/javascript" src="scripts/jquery.blockUI.js"></script>
+
     </thead>
 
 
@@ -97,7 +98,7 @@
                                 </FooterTemplate>
                             </asp:TemplateField>
 
-                            
+
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:LinkButton ID="lnkRemove" runat="server" CommandArgument='<%# Eval("WeddingId")%>'
@@ -127,8 +128,9 @@
         </div>
 
 
-        <p align="right">
-            <a class="btn btn-default" runat="server" href="~/">Powrót &raquo;</a>
-        </p>
+
+         <p align="right">
+        <a class="btn btn-default" runat="server" href="~/">Powrót &raquo;</a>
+    </p>
 
 </asp:Content>

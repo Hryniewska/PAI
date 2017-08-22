@@ -40,8 +40,14 @@
 
     </tbody>
 
-    <p align="right">
-        <a class="btn btn-default" runat="server" href="~/">Powrót &raquo;</a>
-    </p>
+       <div align="center" style="width: 75%;">
+
+        <div style="float: left;">
+           <asp:Button class="btn btn-default" runat="server" OnClick="UpdateDatabase" Text="Synchronizuj z bazą" />
+        </div>
+        <div style="float: right;">
+            <a class="btn btn-default" runat="server" href="~/">Powrót »</a>
+        </div>
+    </div>
 
 </asp:Content>

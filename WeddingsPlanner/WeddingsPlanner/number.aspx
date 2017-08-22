@@ -10,7 +10,7 @@
         <div>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
                 <Columns>
-                    <asp:BoundField DataField="Date" HeaderText="Data" SortExpression="Date" DataFormatString = "{0:dd/MM/yyyy}" ItemStyle-Width="100px" />
+                    <asp:BoundField DataField="Date" HeaderText="Data" SortExpression="Date" DataFormatString="{0:dd/MM/yyyy}" ItemStyle-Width="100px" />
                     <asp:BoundField DataField="Place" HeaderText="Miejsce" SortExpression="Place" ItemStyle-Width="250px" />
                     <asp:BoundField DataField="Adults" HeaderText="Liczba dorosłych" SortExpression="Adults" ItemStyle-Width="150px" />
                     <asp:BoundField DataField="Teens" HeaderText="Młodzież do 18 lat" SortExpression="Teens" ItemStyle-Width="150px" />
@@ -23,22 +23,27 @@
 
             <asp:SqlDataSource ID="SqlDataSource3" runat="server"
                 ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-                SelectCommand="SELECT Adults, Teens, Kids, Place, Date FROM Guest, Wedding WHERE WeddingId_FK1 = WeddingId">
-
-            </asp:SqlDataSource>
+                SelectCommand="SELECT Adults, Teens, Kids, Place, Date FROM Guest, Wedding WHERE WeddingId_FK1 = WeddingId"></asp:SqlDataSource>
             ﻿
 
         </div>
 
         <%--</form>--%>
-                     <%-- SelectCommand="SELECT Adults, Teens, Kids FROM Guest">--%>
-             <%--SelectCommand="SELECT [Adults], [Teens], [Kids], [Place], [Date] FROM [Guest], [Wedding] WHERE WeddingId_FK1=[WeddingId] GROUP BY [WeddingId]">--%>
+        <%-- SelectCommand="SELECT Adults, Teens, Kids FROM Guest">--%>
+        <%--SelectCommand="SELECT [Adults], [Teens], [Kids], [Place], [Date] FROM [Guest], [Wedding] WHERE WeddingId_FK1=[WeddingId] GROUP BY [WeddingId]">--%>
     </tbody>
 
 
 
 
-    <p align="right">
-        <a class="btn btn-default" runat="server" href="~/">Powrót &raquo;</a>
-    </p>
+    <div align="center" style="width: 65%;">
+
+        <div style="float: left;">
+            <a class="btn btn-default" runat="server" href="/">Synchronizuj z bazą &raquo;</a>
+        </div>
+        <div style="float: right;">
+            <a class="btn btn-default" runat="server" href="~/">Powrót »</a>
+        </div>
+    </div>
+
 </asp:Content>
