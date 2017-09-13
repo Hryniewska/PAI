@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Newtonsoft.Json;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
@@ -13,6 +13,10 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Collections;
 using System.IO.Compression;
+using System.Net;
+using System.IO;
+
+using WeddingsPlanner.Models;
 
 namespace WeddingsPlanner
 {
@@ -21,7 +25,7 @@ namespace WeddingsPlanner
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Pulpit\PAI\WeddingsPlanner\WeddingsPlanner\App_Data\MyDatabase.mdf;Integrated Security=True");
-
+            
             con.Open();
 
             con.Close();
@@ -32,6 +36,8 @@ namespace WeddingsPlanner
 
         protected void UpdateDatabase(object sender, EventArgs e)
         {
+
+
             int allAdded = -1;
             while (allAdded != 0)
             {
@@ -52,6 +58,29 @@ namespace WeddingsPlanner
                 con.Close();
             }
             Page_Load(sender, e);
+            String weddings = this.GET("http://localhost:8804/api/Weddings");
+            List<Wedding> weddingList = JsonConvert.DeserializeObject<List<Wedding>>(weddings);
+            //DeserializeObject<Wedding>(weddings);
+            System.Diagnostics.Debug.WriteLine(weddingList);
+            System.Diagnostics.Debug.WriteLine(weddingList.Count);
+
+        }
+        public String GET(String url)
+        {
+            string html = string.Empty;
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.AutomaticDecompression = DecompressionMethods.GZip;
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                html = reader.ReadToEnd();
+            }
+            System.Diagnostics.Debug.WriteLine("koniec click");
+            System.Diagnostics.Debug.WriteLine(html);
+            return html;
         }
 
         private int CheckIfPresent(DataTable dt, DataTable dt2, SqlCommand cmd)

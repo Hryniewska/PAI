@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="date.aspx.cs" Inherits="WeddingsPlanner.date" %>
+﻿<%@  Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="date.aspx.cs" Inherits="WeddingsPlanner.date" Async="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    
     <br>
     <thead>
         <h2>Terminy wesel</h2>
